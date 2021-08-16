@@ -6,7 +6,7 @@ use LazHoliday\PublicHoliday;
 
 try {
     $holiday = new PublicHoliday();
-    var_dump($holiday->fetch('us')->getDataForYear(2021));
+    var_dump($holiday->fetch('uk')->getItems());
 } catch (\Exception $e) {
     var_dump($e->getMessage());
 }

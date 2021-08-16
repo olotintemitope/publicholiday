@@ -12,7 +12,7 @@ class PublicHoliday
     public function __construct()
     {
         $dotenv = new Dotenv();
-        $dotenv->load(__DIR__ . '/../.env');
+        $dotenv->load(__DIR__ . '/../../.env');
     }
 
     /**
@@ -26,7 +26,7 @@ class PublicHoliday
         if (FALSE !== ($json = @file_get_contents("https://www.googleapis.com/calendar/v3/calendars/en.{$country}%23holiday%40group.v.calendar.google.com/events?key={$apiKey}"))) {
             $this->data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
         } else {
-            throw new Exception('Error fetching data');
+            throw new Exception("Error fetching data");
         }
 
         return $this;
