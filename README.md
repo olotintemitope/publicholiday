@@ -24,13 +24,15 @@ try {
 }
 ```
 
-### Available methods
+## Available methods
 - fetch(string $country): PublicHoliday - Get all the calendar data when a country is passed
 - getData(): array - Return all the 3 years calendar data with some info
 - getItems(): array - Return all the 3 years calendar data
 - getDataForYear(int $year): array - Filter holiday data by year
 - getSummary(): array - Get the summary and dates of the holidays
 
+## Country codes
+https://gist.github.com/seanblanchfield/4df78d73c85b149133615c7953894076
 ## License
 --- 
 This project uses the MIT License feel free to contribute.
