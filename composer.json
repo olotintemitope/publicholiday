@@ -1,5 +1,6 @@
 {
     "name": "topaz/holidays",
+    "description": "Fetches Google calendar public holidays",
     "authors": [
         {
             "name": "Temitope Olotin",
@@ -7,6 +8,7 @@
         }
     ],
     "require": {
+        "php": ">=7.4",
         "symfony/dotenv": "^5.3",
         "ext-json": "*"
     },
@@ -14,5 +16,13 @@
         "psr-4": {
             "LazHoliday\\" : "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LazHoliday\\Test\\" : "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
     }
 }
