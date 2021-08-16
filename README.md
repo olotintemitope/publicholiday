@@ -5,7 +5,7 @@ The data always comes with 3 years data; the previous year, the current year and
 # How to use
 - `composer require topaz/holidays`
 - Register for an API key on Google console [https://phpcoder.tech/get-list-of-holidays-using-google-calendar-api/](https://phpcoder.tech/get-list-of-holidays-using-google-calendar-api/)
-- Add your key to your `.env` file
+- Add your key [GOOGLE_CALENDAR_API_KEY] to your `.env` file
 - Import `LazHoliday\PublicHoliday`
 
 ## Sample Usage
