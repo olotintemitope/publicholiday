@@ -22,14 +22,11 @@ class PublicHoliday
      */
     public function fetch(string $country): PublicHoliday
     {
-        try {
-            $apiKey = $_ENV['GOOGLE_CALENDAR_API_KEY'];
-
-            $json = file_get_contents("https://www.googleapis.com/calendar/v3/calendars/en.{$country}%23holiday%40group.v.calendar.google.com/events?key={$apiKey}");
+        $apiKey = $_ENV['GOOGLE_CALENDAR_API_KEY'];
+        if (FALSE !== ($json = @file_get_contents("https://www.googleapis.com/calendar/v3/calendars/en.{$country}%23holiday%40group.v.calendar.google.com/events?key={$apiKey}"))) {
             $this->data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
-
-        } catch (Exception $exception) {
-            throw new Exception($exception->getMessage());
+        } else {
+            throw new Exception('Error fetching data');
         }
 
         return $this;
@@ -60,7 +57,7 @@ class PublicHoliday
     /**
      * @return array
      */
-    private function getItems(): array
+    public function getItems(): array
     {
         return $this->data['items'];
     }
@@ -68,7 +65,7 @@ class PublicHoliday
     /**
      * @return mixed
      */
-    public function getSummary()
+    public function getSummary(): array
     {
         return array_reduce($this->getItems(), static function ($holidays, $item) {
             $holidays[] = [
