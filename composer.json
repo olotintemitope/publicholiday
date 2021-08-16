@@ -23,9 +23,8 @@
             "LazHoliday\\Test\\" : "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
         "phpunit/phpunit": "^9"
     }
 }
