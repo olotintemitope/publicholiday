@@ -12,7 +12,7 @@ class PublicHoliday
     public function __construct()
     {
         $dotenv = new Dotenv();
-        $dotenv->load(__DIR__ . '/../../.env');
+        $dotenv->load(__DIR__ . '/../../../../.env');
     }
 
     /**
