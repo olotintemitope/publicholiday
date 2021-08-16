@@ -30,3 +30,7 @@ try {
 - getItems(): array - Return all the 3 years calendar data
 - getDataForYear(int $year): array - Filter holiday data by year
 - getSummary(): array - Get the summary and dates of the holidays
+
+## License
+--- 
+This project uses the MIT License feel free to contribute.
